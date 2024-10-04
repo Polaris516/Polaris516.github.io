@@ -4,20 +4,26 @@
   
   
   <entry>
-    <title>Algorithm</title>
+    <title>Instruction of Algorithm</title>
     <link href="/Algorithm/"/>
     <url>/Algorithm/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div class="note note-warning">            <p>本文内容根据博主自身理解，同时结合《Instruction of Algorithm (Fourth Edition)》编写。</p>          </div><p><img src="D:/ProgramData/Myblog/source/_posts/assets/AllAlgorithm.png" alt="《Instruction of Algorithm (Fourth Edition)》"></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>-Algorithm</tag>
+      
+    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>手撕排序算法——Insertion Sort</title>
+    <title>手撕排序算法</title>
     <link href="/SortAlgorithm/"/>
     <url>/SortAlgorithm/</url>
     
