@@ -4,11 +4,51 @@
   
   
   <entry>
+    <title>AndroidApp</title>
+    <link href="/AndroidApp/"/>
+    <url>/AndroidApp/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Android-应用开发模式"><a href="#Android-应用开发模式" class="headerlink" title="Android 应用开发模式"></a>Android 应用开发模式</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Android</tag>
+      
+      <tag>软件开发</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>System Operation</title>
+    <link href="/System/"/>
+    <url>/System/</url>
+    
+    <content type="html"><![CDATA[<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-1操作系统简介"><a href="#1-1操作系统简介" class="headerlink" title="1.1操作系统简介"></a>1.1操作系统简介</h2><p><code>操作系统能做什么？</code></p><div class="note note-warning">            <ul><li>从用户的角度：<ol><li>提供良好的用户界面</li><li>标准的函数库</li><li>使得编程更加方便并且不容易出错</li></ol></li><li>从系统的角度：<ol><li>管理资源（硬件资源、处理机、存储器、设备；信息资源【文件】）</li><li>解决申请资源时产生的冲突</li><li>阻止错误的产生和计算机不正当的使用</li></ol></li></ul>          </div><h3 id="操作系统-1"><a href="#操作系统-1" class="headerlink" title="操作系统"></a>操作系统</h3><p><font color="red">操作系统（Operation System，OS）</font>：是指控制和管理整个计算机系统的硬件和软件资源，并合理地组织调度计算机的工作和资源的分配，以提供给用户和其他软件方便的接口和环境，它是计算机系统中最基本你爹系统软件。</p><blockquote><ul><li><p>An operating system acts an intermediary between user of a computer and the computer</p><p>  hardware.</p><ul><li>操作系统充当计算机⽤⼾和计算机硬件之间的中介</li></ul></li><li><p>The purpose of an operating system is to provide an environment in which a user can execute</p><p>  programs in a convenient and efficient manner.</p><ul><li>操作系统的⽬的是提供⼀个⽤⼾可以⽅便和有效地执⾏程序的环境</li></ul></li><li><p>An operating system is software that manages the computer hardware.</p><ul><li>操作系统是管理计算机硬件的软件</li></ul></li></ul></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>-System -Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Instruction of Algorithm</title>
     <link href="/Algorithm/"/>
     <url>/Algorithm/</url>
     
-    <content type="html"><![CDATA[<p><img src="/img/AllAlgorithm.png" alt="《Instruction of Algorithm (Fourth Edition)》"></p><p><img src="/img/Algorithm2.png" alt="《算法导论》（第3版）"></p><div class="note note-warning">            <p>本文内容根据博主自身理解，同时结合《Instruction of Algorithm (4th Edition)》和《算法导论》（第三版）编写。</p><p>PS：借鉴了很多原书中的内容，因为写的太好了……</p>          </div><h2 id="Part-1-Foundations"><a href="#Part-1-Foundations" class="headerlink" title="Part 1 Foundations"></a>Part 1 Foundations</h2><h3 id="1-1-Algorithm"><a href="#1-1-Algorithm" class="headerlink" title="1.1 Algorithm"></a>1.1 Algorithm</h3><h4 id="Data-structures（数据结构）"><a href="#Data-structures（数据结构）" class="headerlink" title="Data structures（数据结构）"></a>Data structures（数据结构）</h4><p><span class="label label-info">This book also presents several data structures. A data structure is away to store and organize data in order to facilitate access and modifications. Using the appropriate data structure or structures is an important part of algorithm design. No single data structure works well for all purposes, and so you should know the strengths and limitations of several of them.</span></p><p><span class="label label-warning">这本书还介绍了几种数据结构。数据结构是一种存储和组织数据的方式，以方便访问和修改。使用适当的数据结构是算法设计的重要组成部分。没有一种单一的数据结构可以很好地满足所有目的，因此您应该知道其中一些数据结构的优点和局限性。</span></p><h4 id="Technique（技术）"><a href="#Technique（技术）" class="headerlink" title="Technique（技术）"></a>Technique（技术）</h4><h4 id="Hard-problems"><a href="#Hard-problems" class="headerlink" title="Hard problems"></a>Hard problems</h4><h4 id="Alternative-computing-models"><a href="#Alternative-computing-models" class="headerlink" title="Alternative computing models"></a>Alternative computing models</h4><p><a href="https://polaris516.github.io/SortAlgorithm/">手撕排序算法</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/img/AllAlgorithm.png" alt="《Instruction of Algorithm (Fourth Edition)》"></p><p><img src="/img/Algorithm2.png" alt="《算法导论》（第3版）"></p><div class="note note-warning">            <p>本文内容根据博主自身理解，同时结合《Instruction of Algorithm (4th Edition)》和《算法导论》（第三版）编写。</p><p>PS：借鉴了很多原书中的内容，因为写的太好了……</p>          </div><h2 id="Part-1-The-Role-of-Algorithms-in-Computing"><a href="#Part-1-The-Role-of-Algorithms-in-Computing" class="headerlink" title="Part 1 The Role of Algorithms in Computing"></a>Part 1 The Role of Algorithms in Computing</h2><h3 id="1-Algorithms"><a href="#1-Algorithms" class="headerlink" title="1. Algorithms"></a>1. Algorithms</h3><p><strong>算法</strong>：（非形式的说）就是定义任何良定义的计算过程，该过程取某个值或值的集合作为输入并产生某个值或值的集合作为输出。</p><p><code>Informally, an algorithm is any well-defined computational procedure that takes some value, or set of values, as input and produces some value, or set of values, as output in a finite amount of time.</code></p><p><strong>输入</strong></p><p><strong>输出</strong></p><h2 id="Part-2-Getting-Started"><a href="#Part-2-Getting-Started" class="headerlink" title="Part 2 Getting Started"></a>Part 2 Getting Started</h2><p><a href="https://polaris516.github.io/SortAlgorithm/">手撕排序算法</a></p>]]></content>
     
     
     
