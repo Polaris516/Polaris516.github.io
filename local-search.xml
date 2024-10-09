@@ -8,7 +8,7 @@
     <link href="/AndroidApp/"/>
     <url>/AndroidApp/</url>
     
-    <content type="html"><![CDATA[<h1 id="Android-应用开发模式"><a href="#Android-应用开发模式" class="headerlink" title="Android 应用开发模式"></a>Android 应用开发模式</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="Android-应用开发模式"><a href="#Android-应用开发模式" class="headerlink" title="Android 应用开发模式"></a>Android 应用开发模式</h1><div class="note note-primary">                      </div><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>参考资料：《Android Sudio开发实践——从零基础到App上线》欧阳燊<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
     
     
     
@@ -35,7 +35,9 @@
     
     <tags>
       
-      <tag>-System -Linux</tag>
+      <tag>System</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -54,7 +56,7 @@
     
     <tags>
       
-      <tag>-Algorithm</tag>
+      <tag>Algorithm</tag>
       
     </tags>
     
@@ -73,7 +75,9 @@
     
     <tags>
       
-      <tag>-Algorithm -Sort</tag>
+      <tag>Algorithm</tag>
+      
+      <tag>Sort</tag>
       
     </tags>
     
