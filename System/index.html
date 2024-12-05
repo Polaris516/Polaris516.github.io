@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://polaris516.github.io/img/408.webp">
 <meta property="article:published_time" content="2024-10-05T08:22:50.000Z">
-<meta property="article:modified_time" content="2024-12-04T14:00:34.540Z">
+<meta property="article:modified_time" content="2024-12-05T09:21:21.346Z">
 <meta property="article:author" content="启明星_Polaris">
 <meta property="article:tag" content="System">
 <meta property="article:tag" content="Linux">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          3.7k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          29 分钟
+          32 分钟
         
       </span>
     
@@ -484,15 +484,8 @@
 <li>异步：多道程序环境允许多个程序并发执行，但由于资源有限，如cpu只有一个，进程的执行并不是一贯到底的，而是走走停停的，它以不可预知的速度向前推进。</li>
 <li>比如A进程正在占用CPU计算，B进程这时也想占用CPU计算，B进程只有等，等A进程算完了，A进程去访问磁盘资源了，这时B进程再占用CPU进行计算，B进程还没计算完，A进程从磁盘取出资源了，A进程发现B这时在占用CPU，这时A进程就需要等待，等B算完后再继续到CPU中进行计算。由于每个进程占用资源的时间不固定，所以进程的执行以不可预知的速度前进</li>
 </ul>
-<h2 id="1-2-中断"><a href="#1-2-中断" class="headerlink" title="1.2 中断"></a>1.2 中断</h2><ul>
-<li>当有事件（event）发生时，CPU会收到一个中断（interrupt）信号，可以是硬中断也可以是软中断</li>
-<li>CPU会停下正在做的事，转而执行中断处理程序，执行完毕会回到之前被中断的地方继续执行</li>
-<li>Operation System is an Interrupt driven system<ul>
-<li>操作系统是一个由中断驱动的系统</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-3-处理器系统"><a href="#1-3-处理器系统" class="headerlink" title="1.3 处理器系统"></a>1.3 处理器系统</h2><h3 id="单处理器系统"><a href="#单处理器系统" class="headerlink" title="单处理器系统"></a>单处理器系统</h3><ul>
+<h2 id="1-2-处理器系统"><a href="#1-2-处理器系统" class="headerlink" title="1.2 处理器系统"></a>1.2 处理器系统</h2><p><img src="/img/System/1.3.1,png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="单处理器系统"><a href="#单处理器系统" class="headerlink" title="单处理器系统"></a>单处理器系统</h3><ul>
 <li>Single-progress System</li>
 <li>只有一颗注CPU，执行通用指令集</li>
 <li>带有其他专用处理器，为特定设备服务，如：磁盘、键盘、图形控制器等<ul>
@@ -509,17 +502,17 @@
 <li>Clustered System</li>
 <li>该系统由若干节点（Node）通过网络连接在一起，每个节点可为单处理器系统或多处理器系统，节点之间是松耦合（loosely coupled)关系<ul>
 <li>高可用性（high availability）</li>
-<li>高性能计算（high-performance computing）</li>
+<li>高性能计算（high-performance computing)</li>
 </ul>
 </li>
 </ul>
-<h2 id="1-4-单道单用户模式"><a href="#1-4-单道单用户模式" class="headerlink" title="1.4 单道单用户模式"></a>1.4 单道单用户模式</h2><p><img src="/img/System/1.3.png" srcset="/img/loading.gif" lazyload alt="单道单用户模式"></p>
-<h2 id="1-5-多道程序设计"><a href="#1-5-多道程序设计" class="headerlink" title="1.5 多道程序设计"></a>1.5 多道程序设计</h2><ul>
+<h3 id="单道单用户模式"><a href="#单道单用户模式" class="headerlink" title="单道单用户模式"></a>单道单用户模式</h3><p><img src="/img/System/1.3.png" srcset="/img/loading.gif" lazyload alt="单道单用户模式"></p>
+<h3 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h3><ul>
 <li>操作系统最重要的一点是具有多道程序的能力</li>
 <li>单道程序不能让CPU和IO设备始终忙碌，多道程序设计通过安排任务使用的CPU总有一个执行任务，从而提高CPU利用率</li>
 <li>实现的硬件保证：处理器和IO设备具有并行工作的能力</li>
 </ul>
-<h2 id="1-6-分时系统"><a href="#1-6-分时系统" class="headerlink" title="1.6 分时系统"></a>1.6 分时系统</h2><ul>
+<h3 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h3><ul>
 <li>分时系统也称多任务系统，是多道程序设计的自然延伸</li>
 <li>允许多个用户共享一台计算机<ul>
 <li>用户只有输入和输出设备</li>
@@ -529,6 +522,25 @@
 </li>
 <li>第一个分时系统CTSS由MIT于1962年开发出来</li>
 </ul>
+<h2 id="1-3-操作系统的发展历程："><a href="#1-3-操作系统的发展历程：" class="headerlink" title="1.3 操作系统的发展历程："></a>1.3 操作系统的发展历程：</h2><p><img src="/img/System/1.3.2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="1-4-操作系统的运行机制和体系结构"><a href="#1-4-操作系统的运行机制和体系结构" class="headerlink" title="1.4 操作系统的运行机制和体系结构"></a>1.4 操作系统的运行机制和体系结构</h2><h3 id="1-4-1-操作系统的运行机制和体系结构"><a href="#1-4-1-操作系统的运行机制和体系结构" class="headerlink" title="1.4.1 操作系统的运行机制和体系结构"></a>1.4.1 操作系统的运行机制和体系结构</h3><h4 id="1-操作系统的运行机制和体系结构"><a href="#1-操作系统的运行机制和体系结构" class="headerlink" title="1.操作系统的运行机制和体系结构"></a>1.操作系统的运行机制和体系结构</h4><p><img src="/img/System/1.5.1.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-操作系统体系结构类比"><a href="#2-操作系统体系结构类比" class="headerlink" title="2.操作系统体系结构类比"></a>2.操作系统体系结构类比</h4><p>类比：</p>
+<p>操作系统体系结构问题与企业的管理问题很相似。</p>
+<p>内核就是企业的管理层，负责一些重要的工作。只有管理层才能执行特权指令，普通员工只能执行非特权指令。用户态，核心态之间的切换相当于普通员工和管理层之间的工作交接</p>
+<p>大内核：企业初创时体量不大，管理层的人会负责大部分的事情。优点是效率高；缺点是组织结构混乱，难以维护</p>
+<p>微内核：随着企业体量越来越大，管理层只负责最核心的一些工作。优点是组织结构清晰，方便维护；缺点是效率低</p>
+<h4 id="3-操作系统用户态和核心态的转换"><a href="#3-操作系统用户态和核心态的转换" class="headerlink" title="3.操作系统用户态和核心态的转换"></a>3.操作系统用户态和核心态的转换</h4><p>“用户态 -&gt; 核心态”是通过中断实现的。并且中断是唯一途径。“核心态 -&gt; 用户态”的切换是通过执行一个特权指令，将程序状态字（PSW）的标志位设置为“用户态”</p>
+<h3 id="1-4-2-中断和异常"><a href="#1-4-2-中断和异常" class="headerlink" title="1.4.2 中断和异常"></a>1.4.2 中断和异常</h3><p><img src="/img/System/1.5.2.png" srcset="/img/loading.gif" lazyload></p>
+<p> 中断</p>
+<ul>
+<li>当有事件（event）发生时，CPU会收到一个中断（interrupt）信号，可以是硬中断也可以是软中断</li>
+<li>CPU会停下正在做的事，转而执行中断处理程序，执行完毕会回到之前被中断的地方继续执行</li>
+<li>Operation System is an Interrupt driven system<ul>
+<li>操作系统是一个由中断驱动的系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-3-系统调用（执行过程、访管指令、库函数与系统调用）"><a href="#1-4-3-系统调用（执行过程、访管指令、库函数与系统调用）" class="headerlink" title="1.4.3 系统调用（执行过程、访管指令、库函数与系统调用）"></a>1.4.3 系统调用（执行过程、访管指令、库函数与系统调用）</h3><p><img src="/img/System/1.4.3" srcset="/img/loading.gif" lazyload></p>
 <h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1>
                 
               </div>
