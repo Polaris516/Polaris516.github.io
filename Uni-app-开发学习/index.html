@@ -27,7 +27,7 @@
 <meta property="og:description" content="Uniapp 学习博客前瞻​	在本博客的内容就是学习Uniapp开发，通过Android studio学习Android app的开发到Uniapp的开发再到未来的Harmony app开发，我们进行到了第二步。 ​	这里的Uniapp的开发需要用到的东西有：Hbuilder X（开发工具）、Vue3、以及编写小程序的开发工具（微信小程序，抖音小程序等等可以自行安装） ​	学习Uniapp开发需要">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-19T12:06:10.000Z">
-<meta property="article:modified_time" content="2024-12-21T07:01:15.382Z">
+<meta property="article:modified_time" content="2024-12-26T07:42:37.274Z">
 <meta property="article:author" content="启明星_Polaris">
 <meta property="article:tag" content="uniapp">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          459 字
+          5.3k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          4 分钟
+          44 分钟
         
       </span>
     
@@ -280,10 +280,424 @@
 <p>​	这里的Uniapp的开发需要用到的东西有：<code>Hbuilder X</code>（开发工具）、Vue3、以及编写小程序的开发工具（微信小程序，抖音小程序等等可以自行安装）</p>
 <p>​	学习Uniapp开发需要具备一些基础知识：Vue3</p>
 <p>​	如果需要后续会将环境安装等教程以博客链接的形式上传到本博客中，大家可以自行消化。</p>
-<h2 id="基础知识（必备）"><a href="#基础知识（必备）" class="headerlink" title="基础知识（必备）"></a>基础知识（必备）</h2><h3 id="Vue3入门学习"><a href="#Vue3入门学习" class="headerlink" title="Vue3入门学习"></a>Vue3入门学习</h3><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/quick-start.html">Vue官方文档</a></p>
+<p>​	<strong>这里将Uniapp官方文档链接放在下面，这个博客不会将每个步骤都详细的写出来，因为这些都已经存在在官方文档中，本博客主要是针对一些基础补充或者入门引导，可以帮助你更好的融入Uniapp开发之中。</strong></p>
+<p>​	<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/">Uniapp官方文档</a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html">Vue官方文档</a></p>
+<blockquote>
+<p>建议学习路线：<strong>博客前瞻</strong>（Vue官方文档 –&gt; Uniapp官方文档）–&gt; <strong>Uniapp基础组件操作</strong> –&gt; <strong>Uniapp上手实操</strong>（另一个博客内容,后续会补充链接）</p>
+<p><font color=orange>在刚刚学习 Uniapp 中最好不要先看 <strong>基础知识（必备）</strong>篇，因为看了你也记住不了多少，不如遇到问题再回头查看，我觉得印象会更深，但是可以先看一下每个基础知识的标题，以方便你日后出现问题寻找。</font></p>
+<p>在学习中如果遇到一些不清楚的地方可以从本博客的 <strong>基础知识（必备）</strong>章节进行学习，这里面提供部分学习时可能出现的问题（如有补充，评论提出）</p>
+</blockquote>
+<h2 id="基础知识（必备）"><a href="#基础知识（必备）" class="headerlink" title="基础知识（必备）"></a>基础知识（必备）</h2><h3 id="Vue3入门学习"><a href="#Vue3入门学习" class="headerlink" title="Vue3入门学习"></a>Vue3入门学习</h3><h4 id="Vue3和Vue2的区别"><a href="#Vue3和Vue2的区别" class="headerlink" title="Vue3和Vue2的区别"></a>Vue3和Vue2的区别</h4><h4 id="CLI和Vite"><a href="#CLI和Vite" class="headerlink" title="CLI和Vite"></a>CLI和Vite</h4><table>
+<thead>
+<tr>
+<th>特性&#x2F;方面</th>
+<th><strong>Vue CLI</strong></th>
+<th><strong>Vite</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构建方式</strong></td>
+<td>使用 Webpack 构建</td>
+<td>使用 ESBuild 和 Rollup 构建</td>
+</tr>
+<tr>
+<td><strong>开发服务器</strong></td>
+<td>传统的 Webpack Dev Server</td>
+<td>原生 ESM 开发服务器（基于 ES Modules）</td>
+</tr>
+<tr>
+<td><strong>初始构建速度</strong></td>
+<td>较慢（依赖 Webpack 编译整个项目）</td>
+<td>极快（只编译使用的模块）</td>
+</tr>
+<tr>
+<td><strong>热更新速度（HMR）</strong></td>
+<td>较慢，尤其是大型项目</td>
+<td>极快，模块级更新</td>
+</tr>
+<tr>
+<td><strong>配置灵活性</strong></td>
+<td>高（基于 Webpack 的扩展性）</td>
+<td>非常高（插件化，简单且灵活）</td>
+</tr>
+<tr>
+<td><strong>生态系统支持</strong></td>
+<td>完整支持 Vue 生态</td>
+<td>原生支持 Vue，且对现代工具链有更好兼容</td>
+</tr>
+<tr>
+<td><strong>默认支持</strong></td>
+<td>Vue 2 和 Vue 3 都支持</td>
+<td>更推荐 Vue 3，Vue 2 需额外插件支持</td>
+</tr>
+<tr>
+<td><strong>目标用户</strong></td>
+<td>适合传统项目和大型复杂项目</td>
+<td>适合现代前端项目、小型或中型项目</td>
+</tr>
+<tr>
+<td><strong>类型</strong></td>
+<td>重量级脚手架，配置较多</td>
+<td>轻量级工具，开箱即用</td>
+</tr>
+<tr>
+<td><strong>构建产物体积</strong></td>
+<td>产物稍大，优化需手动配置</td>
+<td>产物更小，默认有较好的 Tree-Shaking</td>
+</tr>
+<tr>
+<td><strong>适用框架</strong></td>
+<td>专为 Vue 设计</td>
+<td>不仅适用于 Vue，还支持 React、Svelte 等</td>
+</tr>
+<tr>
+<td><strong>插件体系</strong></td>
+<td>基于 Webpack 的插件</td>
+<td>基于 Rollup 的插件，生态丰富</td>
+</tr>
+<tr>
+<td><strong>现代特性支持</strong></td>
+<td>对现代 JS 特性支持较慢</td>
+<td>对现代 JS&#x2F;CSS 特性支持原生</td>
+</tr>
+</tbody></table>
+<h5 id="总结：Vue-CLI-和-Vite-的适用场景"><a href="#总结：Vue-CLI-和-Vite-的适用场景" class="headerlink" title="总结：Vue CLI 和 Vite 的适用场景"></a><strong>总结：Vue CLI 和 Vite 的适用场景</strong></h5><table>
+<thead>
+<tr>
+<th>工具</th>
+<th><strong>适合场景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Vue CLI</strong></td>
+<td>- 需要构建 Vue 2 项目。 - 项目规模较大，依赖复杂的 Webpack 配置和插件体系。 - 团队对 Webpack 更熟悉或已有成熟的 Webpack 配置。</td>
+</tr>
+<tr>
+<td><strong>Vite</strong></td>
+<td>- 构建 Vue 3 项目，或新项目时优先选择。 - 需要更快的开发启动速度和热更新。 - 更轻量化的项目，使用现代前端工具链和特性（如 TypeScript、ES Modules）。</td>
+</tr>
+</tbody></table>
+<h4 id="Uniapp基础模版"><a href="#Uniapp基础模版" class="headerlink" title="Uniapp基础模版"></a>Uniapp基础模版</h4><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/quick-start.html">Vue官方文档</a></p>
 <p>以下的内容我们将以Uniapp中的Vue写作方法为主：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserInfoPlus&quot;</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;obj.avatar&quot;</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;avatar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>&#123;&#123;obj.name&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">		</span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggleEdit&quot;</span>&gt;</span>编辑<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isEditing&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;isEditing&quot;</span>&gt;</span></span><br><span class="language-xml">			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;editedName&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;修改名字&quot;</span>/&gt;</span></span><br><span class="language-xml">			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;editedAvatar&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;修改头像&quot;</span>/&gt;</span></span><br><span class="language-xml">			<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;submitChanges&quot;</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span>	<br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123;ref, computed&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-keyword">const</span> emit = <span class="hljs-title function_">defineEmits</span>([<span class="hljs-string">&quot;update&quot;</span>]);</span></span><br><span class="language-javascript"><span class="language-xml">	</span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-keyword">const</span> props = <span class="hljs-title function_">defineProps</span>(&#123;</span></span><br><span class="language-javascript"><span class="language-xml">		<span class="hljs-attr">obj</span>: &#123;</span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-attr">type</span>: <span class="hljs-title class_">Object</span>,</span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-title function_">default</span>(<span class="hljs-params"></span>) &#123;</span></span><br><span class="language-javascript"><span class="language-xml">				<span class="hljs-keyword">return</span> &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-attr">avatar</span>:<span class="hljs-string">&quot;&quot;</span>&#125;</span></span><br><span class="language-javascript"><span class="language-xml">			&#125;</span></span><br><span class="language-javascript"><span class="language-xml">		&#125;</span></span><br><span class="language-javascript"><span class="language-xml">	&#125;);</span></span><br><span class="language-javascript"><span class="language-xml">	</span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-keyword">const</span> obj = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> (&#123;</span></span><br><span class="language-javascript"><span class="language-xml">		<span class="hljs-attr">name</span>: props.<span class="hljs-property">obj</span>.<span class="hljs-property">name</span> || <span class="hljs-string">&quot;未知12138&quot;</span>,</span></span><br><span class="language-javascript"><span class="language-xml">		<span class="hljs-attr">avatar</span>: props.<span class="hljs-property">obj</span>.<span class="hljs-property">avatar</span> || <span class="hljs-string">&quot;../../static/default_img.jpg&quot;</span></span></span><br><span class="language-javascript"><span class="language-xml">	&#125;)); </span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-comment">// 编辑逻辑处理</span></span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> isEditing = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">false</span>);</span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> editedName = <span class="hljs-title function_">ref</span>(props.<span class="hljs-property">obj</span>.<span class="hljs-property">name</span>);</span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> editedAvatar = <span class="hljs-title function_">ref</span>(props.<span class="hljs-property">obj</span>.<span class="hljs-property">avatar</span>);</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> <span class="hljs-title function_">toggleEdit</span> = (<span class="hljs-params"></span>) =&gt; &#123;</span></span><br><span class="language-javascript"><span class="language-xml">	isEditing.<span class="hljs-property">value</span> = !isEditing.<span class="hljs-property">value</span>;</span></span><br><span class="language-javascript"><span class="language-xml">&#125;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> <span class="hljs-title function_">submitChanges</span> = (<span class="hljs-params"></span>) =&gt; &#123;</span></span><br><span class="language-javascript"><span class="language-xml">	isEditing.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;</span></span><br><span class="language-javascript"><span class="language-xml">	</span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-title function_">emit</span>(<span class="hljs-string">&quot;update&quot;</span>,&#123;<span class="hljs-attr">name</span>: editedName.<span class="hljs-property">value</span>, <span class="hljs-attr">avatar</span>: editedAvatar.<span class="hljs-property">value</span>&#125;);</span></span><br><span class="language-javascript"><span class="language-xml">&#125;</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml">	<span class="hljs-selector-class">.UserInfoPlus</span>&#123;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">background</span>: <span class="hljs-number">#ccc</span>;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">display</span>: flex;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">align-items</span>: center;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">justify-content</span>: center;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-attribute">flex-direction</span>: column;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-selector-tag">image</span>&#123;</span></span><br><span class="language-css"><span class="language-xml">			<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span></span><br><span class="language-css"><span class="language-xml">			<span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span></span><br><span class="language-css"><span class="language-xml">			<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;		</span></span><br><span class="language-css"><span class="language-xml">		&#125;</span></span><br><span class="language-css"><span class="language-xml">		<span class="hljs-selector-class">.username</span>&#123;</span></span><br><span class="language-css"><span class="language-xml">			<span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">0</span>;</span></span><br><span class="language-css"><span class="language-xml">			<span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;</span></span><br><span class="language-css"><span class="language-xml">		&#125;</span></span><br><span class="language-css"><span class="language-xml">	&#125;</span></span><br><span class="language-css"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>	<br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span></span><br><span class="language-xml">	</span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span></span><br><span class="language-xml">	</span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
 
+<p>这是一个Uniapp页面的基础模版：</p>
+<p><code>&lt;script setup&gt;</code>：语法糖。我们要记住这个模版，后面在Uniapp中利用这个基础模版完成页面的创建。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 这是 Vue2 的写法：</span><br><br>&lt;template&gt;<br>	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;increment&quot;</span>&gt;</span>Count:&#123;&#123; count &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123;ref&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span></span><br><span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;</span></span><br><span class="language-javascript"><span class="language-xml">        <span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>);</span></span><br><span class="language-javascript"><span class="language-xml">        <span class="hljs-keyword">const</span> <span class="hljs-title function_">increment</span> = (<span class="hljs-params"></span>) =&gt; &#123;</span></span><br><span class="language-javascript"><span class="language-xml">            count.<span class="hljs-property">value</span>++;</span></span><br><span class="language-javascript"><span class="language-xml">        &#125;;</span></span><br><span class="language-javascript"><span class="language-xml">    </span></span><br><span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">return</span> &#123;</span></span><br><span class="language-javascript"><span class="language-xml">        count,</span></span><br><span class="language-javascript"><span class="language-xml">        increment,</span></span><br><span class="language-javascript"><span class="language-xml">    	&#125;;</span></span><br><span class="language-javascript"><span class="language-xml">    &#125;,</span></span><br><span class="language-javascript"><span class="language-xml">&#125;;</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 这是 Vue3 的写法：</span><br><br>&lt;template&gt;<br>	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;increment&quot;</span>&gt;</span>Count:&#123;&#123; count &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123;ref&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>);</span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> <span class="hljs-title function_">increment</span> = (<span class="hljs-params"></span>) =&gt; &#123;</span></span><br><span class="language-javascript"><span class="language-xml">    count.<span class="hljs-property">value</span>++;</span></span><br><span class="language-javascript"><span class="language-xml">&#125;</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h4><p>语法糖是什么？</p>
+<blockquote>
+<p>语法糖（Syntactic sugar），也译为糖衣语法是由英国计算机科学家彼得·约翰·<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B0%E8%BE%BE/1571737?fromModule=lemma_inlink">兰达</a>（Peter J. Landin）发明的一个术语，指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/4456504?fromModule=lemma_inlink">计算机语言</a>中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%91%98/62748?fromModule=lemma_inlink">程序员</a>使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</p>
+<p>简单理解：语法糖可以看成是一个函数的集合体，在这个里面我们可以对某些函数或者实现进行简化操作，后面的内容也会提到这部分，随着后面的学习可以更好的理解这个语法糖的概念。</p>
+</blockquote>
+<h4 id="响应式基础"><a href="#响应式基础" class="headerlink" title="响应式基础"></a>响应式基础</h4><p>1.什么是响应式网页？</p>
+<p><code>响应式网页（Responsive Web Design）是一种网页设计和开发的技术，使网页能够在不同设备和屏幕尺寸上提供良好的用户体验，通过使用灵活的布局、自适应的图像和CSS媒体查询，响应式网页可以在各种设备（桌面电脑、笔记本、智能手机）上动态调整页面布局和内容显示方式。</code></p>
+<p>2.Vue中的响应式</p>
+<blockquote>
+<p>Vue中的”响应式”指的是<strong>数据和视图之间的自动同步机制</strong></p>
+<p>当数据发生变化时，视图会自动更新，而无需开发者手动操作DOM。这种机制通过 Vue 的响应式系统实现，使开发者可以更高效地管理状态和构建动态的用户界面。</p>
+<ol>
+<li><strong>数据驱动视图</strong>：视图直接依赖于数据，当数据变化时，视图会自动更新。</li>
+<li><strong>自动依赖追踪</strong>：Vue 自动追踪哪些数据被使用，并在数据变化时更新相关部分，而非整个页面</li>
+<li><strong>声明式编程</strong>：开发者只需声明”数据如何影响视图”，不需要手动操作DOM</li>
+</ol>
+</blockquote>
+<h5 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h5><ul>
+<li>用于创建一个<strong>单值的响应式对象</strong></li>
+<li>常用于处理基本数据类型（如字符串、数字、布尔值等）</li>
+<li>响应式通过<code>.value</code>访问</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;ref&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;<br><br><span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>);<br><br>count.<span class="hljs-property">value</span>++;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(count.<span class="hljs-property">value</span>);  <span class="hljs-comment">// 输出1</span><br></code></pre></td></tr></table></figure>
+
+<p>​	<strong>ref 的对象解包</strong>：</p>
+<ul>
+<li>​	在<strong>template</strong>中，<strong>ref</strong> 的 <strong>.value</strong> 会被自动解包</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;count&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span>    <br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123;ref&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>);</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h5 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h5><ul>
+<li>用于创建计算属性</li>
+<li>计算属性可以基于响应式数据动态计算值，并且具备缓存功能（只有依赖的数据发生变化时才会重新计算）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;reactive, computed&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;<br><br><span class="hljs-keyword">const</span> state = <span class="hljs-title function_">reactive</span>(&#123;<br>    <span class="hljs-attr">num1</span>: <span class="hljs-number">20</span>,<br>    <span class="hljs-attr">num2</span>: <span class="hljs-number">10</span>,<br>&#125;)<br><br><span class="hljs-keyword">const</span> sum = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> state.<span class="hljs-property">num1</span> +state.<span class="hljs-property">num2</span>);<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sum.<span class="hljs-property">value</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><h5 id="v-bind（单向绑定）"><a href="#v-bind（单向绑定）" class="headerlink" title="v-bind（单向绑定）"></a>v-bind（单向绑定）</h5><p><code>v-bind</code>：用于将<strong>父组件的数据</strong>或<strong>Vue数据</strong>绑定到<strong>HTML属性</strong>或<strong>子组件的props</strong>上，形成<strong>单向数据流</strong>。</p>
+<p><strong>核心特点</strong>：</p>
+<ul>
+<li>数据流是单向的：Vue（数据） –&gt; HTML属性或子组件。</li>
+<li>用户无法通过页面上的交互直接更改这些数据</li>
+<li>用于动态绑定元素的属性、组件的props等。</li>
+</ul>
+<h5 id="v-model（双向绑定）"><a href="#v-model（双向绑定）" class="headerlink" title="v-model（双向绑定）"></a>v-model（双向绑定）</h5><p><code>v-model</code>：是Vue的语法糖，用于实现双向数据绑定：Vue数据模型（父组件变量）和用户界面之间可以互相更新。</p>
+<p><strong>核心特点</strong>：</p>
+<ul>
+<li><p>数据流向是<strong>双向的</strong>：</p>
+<ul>
+<li><p>Vue数据（模型）–&gt;用户界面（输入框、组件等）</p>
+</li>
+<li><p>用户界面（输入操作）–&gt;Vue数据（模型）</p>
+</li>
+</ul>
+</li>
+<li><p>常用于表单控件（如 input、 textarea等）或组件的值绑定</p>
+</li>
+<li><p>本质上是<code>v-bind</code>和<code>v-on</code>的语法糖</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;value&quot;</span> <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">&quot;value = $event.target.value&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="v-bind-和-v-model-的区别对比"><a href="#v-bind-和-v-model-的区别对比" class="headerlink" title="v-bind 和 v-model 的区别对比"></a><strong><code>v-bind</code> 和 <code>v-model</code> 的区别对比</strong></h5><table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong><code>v-bind</code>（单向绑定）</strong></th>
+<th><strong><code>v-model</code>（双向绑定）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>数据方向</strong></td>
+<td>单向：Vue 数据（模型） → HTML&#x2F;子组件</td>
+<td>双向：Vue 数据 ↔ HTML&#x2F;子组件</td>
+</tr>
+<tr>
+<td><strong>用户操作是否修改数据</strong></td>
+<td>不可以，用户无法通过界面直接修改绑定的数据</td>
+<td>可以，用户的输入会实时同步到 Vue 数据模型</td>
+</tr>
+<tr>
+<td><strong>常见使用场景</strong></td>
+<td>动态绑定属性、传递 <code>props</code>、动态样式</td>
+<td>表单控件输入、父子组件双向绑定</td>
+</tr>
+<tr>
+<td><strong>本质</strong></td>
+<td>数据的展示和传递</td>
+<td>数据的展示和交互</td>
+</tr>
+<tr>
+<td><strong>语法糖</strong></td>
+<td>没有（需明确绑定属性）</td>
+<td><code>v-bind:value</code> 和 <code>v-on:input</code> 的语法糖</td>
+</tr>
+<tr>
+<td><strong>常见例子</strong></td>
+<td>绑定图片 <code>src</code>，传递子组件 <code>props</code></td>
+<td>输入框、选项框、组件中需要交互的值绑定</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4><p><code>生命周期钩子</code>（Lifecycle Hooks）是指在应用程序或组件的生命周期中，不同阶段触发的一些预定义事件或函数。常见于现代前端框架（如Vue、React、Angular）和其他一些框架中。这些钩子提供了一种机制，让开发者能够在特定的时机执行代码，比如组件的初始化、更新或销毁等阶段。</p>
+<h5 id="Vue生命周期钩子"><a href="#Vue生命周期钩子" class="headerlink" title="Vue生命周期钩子"></a>Vue生命周期钩子</h5><p>Vue.js 的组件生命周期分为创建、挂载、更新和销毁四个阶段，各个阶段对应的钩子如下：</p>
+<p><strong>创建阶段</strong></p>
+<ul>
+<li>beforeCreate：实例初始化之前调用此时无法访问data，method等</li>
+<li>created：实例创建完成后调用，可访问data，method等，但尚未挂载到DOM</li>
+</ul>
+<p><strong>挂载阶段</strong></p>
+<ul>
+<li>beforeMount：在挂载到DOM之前调用</li>
+<li>mounted：挂载到DOM后调用，此时可以操作真实的DOM</li>
+</ul>
+<p><strong>更新阶段</strong></p>
+<ul>
+<li>beforeUpdate：数据更新时调用，但未更新到DOM</li>
+<li>updated：数据更新并渲染到DOM之后使用</li>
+</ul>
+<p><strong>销毁阶段</strong></p>
+<ul>
+<li>beforeUnmount（Vue3）&#x2F;beforeDestroy（Vue2）：实力销毁之前调用</li>
+<li>unmounted（Vue3）&#x2F;destroyed（Vue2）：实力销毁后调用</li>
+</ul>
+<h5 id="Uniapp-生命周期函数"><a href="#Uniapp-生命周期函数" class="headerlink" title="Uniapp 生命周期函数"></a>Uniapp 生命周期函数</h5><blockquote>
+<p><font color=red>uniapp 页面的生命周期函数</font>与Vue的生命周期函数有所不同。</p>
+</blockquote>
+<p>在开发 uniapp Vue3版本的时候，需要在组合式 API 中需要先从”@dcloudio&#x2F;uni-app”模块中导入才可以。</p>
+<ul>
+<li>onLoad：页面加载时触发，可以在此生命周期函数中进行页面初始化操作。</li>
+<li>onShow：页面显示时触发，可以在此生命周期函数中进行页面展示相关的操作。</li>
+<li>onReady：页面初次渲染完成时触发，可以在此生命周期函数中进行页面渲染完成后的操作。</li>
+<li>onHide：页面隐藏时触发，可以在此生命周期函数中进行页面隐藏相关的操作。</li>
+<li>onUnload：页面卸载时触发，可以在此生命周期函数中进行页面卸载相关的操作。</li>
+</ul>
+<p>其余生命周期：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle">页面生命周期</a></p>
+<h5 id="uniapp-中组件生命周期函数和页面生命周期函数的执行顺序"><a href="#uniapp-中组件生命周期函数和页面生命周期函数的执行顺序" class="headerlink" title="uniapp 中组件生命周期函数和页面生命周期函数的执行顺序"></a>uniapp 中组件生命周期函数和页面生命周期函数的执行顺序</h5><p>不包含组件的页面：</p>
+<p>onLoad &gt; onShow &gt; onReady</p>
+<p>包含组件的页面：</p>
+<p>onLoad &gt; onShow &gt; onBeforeMount &gt; onReady &gt; onMounted</p>
+<hr>
+<h3 id="css基础布局"><a href="#css基础布局" class="headerlink" title="css基础布局"></a>css基础布局</h3><h4 id="盒子模型（div-view）布局"><a href="#盒子模型（div-view）布局" class="headerlink" title="盒子模型（div-&gt;view）布局"></a>盒子模型（div-&gt;view）布局</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 使容器成为一个弹性盒子，子元素可以根据规则进行动态排列</span><br><br><span class="hljs-attr">display</span>:flex<br></code></pre></td></tr></table></figure>
+
+<p>父容器属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>功能</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-direction</td>
+<td>设置子元素的排列方向</td>
+<td><code>row</code><br/><code>column</code><br/></td>
+</tr>
+<tr>
+<td>justify-content</td>
+<td>设置子元素在主轴（flex-direction指定的方向上的对齐方式</td>
+<td><code>flex-start</code>（默认，左对齐）<br/><code>center</code>（居中）<br/><code>flex-end</code>（右对齐）<br/><code>space--between</code>（两端对齐、元素之间均匀分布）<br/><code>space-around</code>（元素之间均匀分布，且有外边距）</td>
+</tr>
+<tr>
+<td>align-items</td>
+<td>设置子元素在交叉轴上的对齐方式</td>
+<td><code>strech</code>（默认，拉伸填充）<br/><code>flex-start</code>（顶部对齐）<br/><code>center</code>（垂直居中）<br/><code>flex-end</code>（底部对齐）<br/><code>baseline</code>（文字基线对齐）</td>
+</tr>
+<tr>
+<td>gap</td>
+<td>设置子元素之间的间距（水平和垂直要间距统一）</td>
+<td>任意长度值（如10px）</td>
+</tr>
+<tr>
+<td>flex-wrap</td>
+<td>设置子元素是否换行排列</td>
+<td><code>nowrap</code>（默认，不换行）<br/><code>wrap</code>（自动换行）<br/><code>wrap-reverse</code>（换行，反向排列）</td>
+</tr>
+<tr>
+<td>align-content</td>
+<td>在多行布局下，设置多行之间的对齐方式（只适用于flex-wrap换行的情况）</td>
+<td><code>stretch</code> (默认，均匀拉伸)<br/> <code>flex-start</code> (顶部对齐)<br/> <code>center</code> (居中)<br/> <code>flex-end</code> (底部对齐)<br/> <code>space-between</code> (两端对齐)<br/> <code>space-around</code> (均匀分布)</td>
+</tr>
+</tbody></table>
+<p>子元素属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>功能</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><code>flex</code></strong></td>
+<td>定义子元素的伸缩比例（占据空间的灵活性）。</td>
+<td><code>auto</code> (自动)  <code>1</code> (等比例伸缩)  <code>0</code> (不伸缩)  也可以用 <code>flex-grow flex-shrink flex-basis</code> 定义</td>
+</tr>
+<tr>
+<td><strong><code>align-self</code></strong></td>
+<td>设置单个子元素在交叉轴上的对齐方式（覆盖 <code>align-items</code> 的设置）。</td>
+<td><code>auto</code> (继承父级)  <code>flex-start</code> (顶部对齐)  <code>center</code> (垂直居中)  <code>flex-end</code> (底部对齐)</td>
+</tr>
+<tr>
+<td><strong><code>order</code></strong></td>
+<td>设置子元素的排列顺序，值越小越靠前，默认为 <code>0</code>。</td>
+<td>任意整数值，比如 <code>-1</code> 或 <code>2</code>。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="其余前端知识点"><a href="#其余前端知识点" class="headerlink" title="其余前端知识点"></a>其余前端知识点</h3><hr>
+<h4 id="箭头函数（Arrow-Function）"><a href="#箭头函数（Arrow-Function）" class="headerlink" title="箭头函数（Arrow Function）"></a>箭头函数（Arrow Function）</h4><p>箭头函数是 JavaScript 中的一种简写函数形式。它引入与 ES6 ，用来简化函数的声明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">functionname</span> = (<span class="hljs-params">parameters</span>) =&gt; &#123;expressions&#125;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果函数体只有一行代码，且返回值可以直接省略<code>return</code>关键字和大括号</li>
+<li>如果有多个参数，则用逗号分隔，参数周围不用括号时，仅限单个参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 普通函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a,b</span>) &#123;<br>    <span class="hljs-keyword">return</span> a+b;<br>&#125;<br><br><span class="hljs-comment">// 箭头函数</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">add</span> = (<span class="hljs-params">a,b</span>) =&gt; a+b;<br><br><span class="hljs-comment">// 只有一个参数</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">square</span> = x =&gt; x*x;<br><br><span class="hljs-comment">// 函数体有多行代码</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">multiply</span> = (<span class="hljs-params">a,b</span>) =&gt; &#123;<br>    <span class="hljs-keyword">const</span> result = a * b;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><blockquote>
+<p>这里只是简单对回调函数进行一个介绍，具体的讲解请点击下面的链接</p>
+<p><a href="">关于回调函数以及异步编程</a></p>
+</blockquote>
+<ul>
+<li><strong>回调函数</strong>是一个<code>作为参数传递给其他函数</code>的函数。<ul>
+<li>其实回调函数就是普通函数，只是它是作为一个参数使用的函数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greeting</span>(<span class="hljs-params">name</span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello, <span class="hljs-subst">$&#123;name&#125;</span>!`</span>);<br>&#125;<br><br><span class="hljs-comment">// 使用回调函数</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">processUserInput</span>(<span class="hljs-params">callback</span>) &#123; <br>    <span class="hljs-comment">// 这里的方式跟函数定义传参一样，名字不一定一样，只是逻辑</span><br>    <span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;lisi&quot;</span>;<br>    <span class="hljs-title function_">callback</span>(name);  <br>&#125;<br><br><span class="hljs-comment">// 记住定义函数要使用，否则只是单纯的定义函数</span><br><br><span class="hljs-comment">// 使用函数processUserInput,并且传参（回调）</span><br><span class="hljs-title function_">processUserInput</span>(greeting); <br><br>		<span class="hljs-comment">// 输出: Hello,lisi!</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="为什么要使用回调函数？"><a href="#为什么要使用回调函数？" class="headerlink" title="为什么要使用回调函数？"></a>为什么要使用回调函数？</h5><p><code>这里的内容我参考了很多资料，但是仍然有一些不足，但是核心思想差别不大，这里的内容可以帮助你理解回调</code></p>
+<ol>
+<li><p><strong>回调函数通常用于需要异步处理、延迟处理或者动态处理的场景。</strong></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在js中，异步操作（如定时器、API请求）需要依赖回调函数来处理操作完成后的结果</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello after 2 seconds!&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">// setTimeout 是一个异步函数</span><br><span class="hljs-built_in">setTimeout</span>(sayHello,<span class="hljs-number">2000</span>);<br><br><span class="hljs-comment">// 也就是在2s后执行sayHello</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在某些场景下，会希望 <strong>某些代码只在特定事件或任务完成后才执行</strong>，这时回调函数就非常有用。</p>
+<p> 例如：异步操作的结果不会立即返回，而回调函数可以确保结果完成后再继续执行</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 模拟网络请求</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fecthData</span>(<span class="hljs-params">callback</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Data fetched&quot;</span>);<br>        <span class="hljs-title function_">callback</span>();<br>    &#125;,<span class="hljs-number">2000</span>);<br>&#125;<br><br><span class="hljs-comment">// 回调函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">processData</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Processing data...&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">// 注意这里的执行顺序：fetchData -&gt; processData</span><br><span class="hljs-title function_">fetchData</span>(processData);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>在 Js 等语言中，很多操作是异步的（如定时器、事件监听、网络请求等）。回调函数是处理异步任务的核心机制，它能让你在任务完成后执行下一步操作，而不会阻塞主线程。</strong></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">step1</span>(<span class="hljs-params">callback</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Step 1 completed&quot;</span>);<br>  <span class="hljs-title function_">callback</span>();<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">step2</span>(<span class="hljs-params">callback</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Step 2 completed&quot;</span>);<br>  <span class="hljs-title function_">callback</span>();<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">step3</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Step 3 completed&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">// 按顺序执行多个异步任务</span><br><span class="hljs-title function_">step1</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">step2</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-title function_">step3</span>();<br>  &#125;);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p> 是不是看起来很简单？目前的回调函数是“独立”的，他们之间并不存在任何关系，如果我的前一个函数需要后一个函数的返回参数呢？</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/*</span><br><span class="hljs-comment">场景：</span><br><span class="hljs-comment"> 1.用户登录</span><br><span class="hljs-comment"> 2.获取用户数据</span><br><span class="hljs-comment"> 3.查询用户的朋友列表</span><br><span class="hljs-comment"> 4.发送消息给每个朋友</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">loginUser</span>(<span class="hljs-params">username,password,callback</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`User <span class="hljs-subst">$&#123;username&#125;</span> logged in`</span>);<br>       <span class="hljs-title function_">callback</span>(&#123;<span class="hljs-attr">userId</span>:<span class="hljs-number">1</span> ,<span class="hljs-attr">username</span>: username&#125;); <span class="hljs-comment">// 返回用户信息</span><br>    &#125;, <span class="hljs-number">1000</span>);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchUserData</span>(<span class="hljs-params">userId, callback</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Fetched data for user <span class="hljs-subst">$&#123;userId&#125;</span>`</span>);<br>    	<span class="hljs-title function_">callback</span>(&#123;<span class="hljs-attr">userId</span>:userId, <span class="hljs-attr">friends</span>:[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]&#125;); <span class="hljs-comment">// 返回用户数据</span><br>    &#125;, <span class="hljs-number">1000</span>);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchFriends</span>(<span class="hljs-params">friendsIds,callback</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Fetched friends for user ：<span class="hljs-subst">$&#123;friendsIds.join(<span class="hljs-string">&quot;,&quot;</span>)&#125;</span>`</span>)；<br>        <span class="hljs-title function_">callback</span>(friendIds.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">id</span> =&gt;</span> (&#123; <span class="hljs-attr">friendId</span>: id, <span class="hljs-attr">name</span>: <span class="hljs-string">`Friend <span class="hljs-subst">$&#123;id&#125;</span>`</span>&#125;)));<br>    &#125;, <span class="hljs-number">1000</span>);<span class="hljs-comment">// 返回朋友列表</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sendMessage</span>(<span class="hljs-params">friend,callback</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Message sent to <span class="hljs-subst">$&#123;friend.name&#125;</span>`</span>);<br>       <span class="hljs-title function_">callback</span>();<br>    &#125;, <span class="hljs-number">1000</span>);<br>&#125;<br><br><span class="hljs-comment">// 开始嵌套的回调地狱</span><br><span class="hljs-title function_">loginUser</span>(<span class="hljs-string">&quot;lisi&quot;</span>, <span class="hljs-string">&quot;password123&quot;</span>, <span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> &#123;<br>    <span class="hljs-title function_">fetchUserData</span>(user.<span class="hljs-property">userId</span>, <span class="hljs-function"><span class="hljs-params">userData</span> =&gt;</span> &#123;<br>    	<span class="hljs-title function_">fetchFriends</span>(userData.<span class="hljs-property">friends</span>, <span class="hljs-function"><span class="hljs-params">fiends</span> =&gt;</span> &#123;<br>            friends.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">friend</span> =&gt;</span> &#123;<br>                <span class="hljs-title function_">sendMessage</span>(friend, <span class="hljs-function">() =&gt;</span> &#123;<br>                    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Done processing #&#123;friend.name&#125;`</span>);<br>                &#125;);<br>            &#125;);<br>        &#125;);<br>    &#125;);<br>&#125;);<br><br><span class="hljs-comment">/* 输出结果：</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">            User lisi logged in</span><br><span class="hljs-comment">            Fetched data for user 1</span><br><span class="hljs-comment">            Fetched friends for user: 2, 3, 4</span><br><span class="hljs-comment">            Message sent to Friend 2</span><br><span class="hljs-comment">            Done processing Friend 2</span><br><span class="hljs-comment">            Message sent to Friend 3</span><br><span class="hljs-comment">            Done processing Friend 3</span><br><span class="hljs-comment">            Message sent to Friend 4</span><br><span class="hljs-comment">            Done processing Friend 4</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">接下来让我们来看一下这个回调地狱：</span><br><span class="hljs-comment">	首先我们先看（用户）场景：就是一个用户登录，然后要发送消息给用户的朋友。</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">    但是对于我们来说（程序员）场景：</span><br><span class="hljs-comment">    	验证登录信息 -&gt; 获取用户（关键词）信息 -&gt; （根据关键词）寻找用户朋友（列表）-&gt; </span><br><span class="hljs-comment">		（根据朋友列表）发送信息	</span><br><span class="hljs-comment">	（为了更直观看出嵌套逻辑，以及以后在开发过程中调试代码，加上了console.log）</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">	可以看到这里的每一步都依靠前一步的结果：</span><br><span class="hljs-comment">		loginUser：用户登录后返回用户信息（如 user.userId）。</span><br><span class="hljs-comment">        fetchUserData：必须使用 user.userId 来获取用户的具体数据（如 friends 列表）。</span><br><span class="hljs-comment">        fetchFriends：需要根据用户的数据（friends 列表）查询用户的朋友信息。</span><br><span class="hljs-comment">        sendMessage：必须有朋友的信息，才能给每个朋友发送消息。</span><br><span class="hljs-comment">--------------------------------------------------------------------------------</span><br><span class="hljs-comment">如果觉得很难理解，可以这么看：</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">	上面这四个函数均是我们自己实现的：我们需要先登录确定用户身份后才能将用户的关键词ID获取到，获取到ID后我们才能用用户的ID去数据库中寻找用户的friend列表，有了friend列表我们才能获取到每个人的ID和信息（ID是辨别人的key），获取到每个人的ID我们才能发送信息，这是一整个流程是必须这么实现的。</span><br><span class="hljs-comment">	</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<p> ​	因为逻辑就是这样的，嵌套的逻辑显然在某些情况下很难操作，所以我们可以采用几种异步操作来解决。（这里解决方案在后面的网络基础知识中解决）</p>
+<ul>
+<li><strong>回调地狱</strong>：（在处理多个异步操作时）当多个异步操作需要按顺序执行，且每个操作的结果都是下一个操作的输入时，代码往往会变成多层嵌套的回调函数，导致代码难以阅读和维护。<ul>
+<li>代码嵌套严重</li>
+<li>难以维护</li>
+<li>错处处理苦难</li>
+</ul>
+</li>
+<li><font color=red>回调函数在其他编程语言中如 C , Cpp , Java 等中均有体现，只是展示样式不同，例如 c 等语言中是利用函数指针来实现回调函数</font></li>
+</ul>
+</li>
+</ol>
+<h5 id="回调函数的含义和用途："><a href="#回调函数的含义和用途：" class="headerlink" title="回调函数的含义和用途："></a>回调函数的含义和用途：</h5><ul>
+<li>控制执行顺序</li>
+<li>提高代码复用性和灵活性</li>
+<li>解耦和模块化</li>
+<li>异步编程的核心</li>
+</ul>
+<hr>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>其实我们可以把DOM理解成一种抽象出来的语法树结构，它是 html 或者 XML 被浏览器解析生成的一种树形结构。</p>
+<blockquote>
+<p><strong>1.DOM的定义</strong></p>
+<ul>
+<li>DOM（Document Object Model），文档对象模型，是浏览器解析 HTML 或 XML 文件后生成的一种树形数据结构</li>
+<li><strong>核心思想</strong>：DOM提供了对文档的抽象化表示和操作方法</li>
+</ul>
+<p><strong>2. DOM Core</strong></p>
+<ul>
+<li>Node：DOM树的基本单元，每个元素、属性、文本都是一个Node</li>
+<li>Document：表示整个文档（DOM树的根）</li>
+<li>ELement：表示 HTML 或 XML 的元素</li>
+<li>Attr：表示元素的属性</li>
+<li>Text：表示文本内容</li>
+</ul>
+<p><strong>3.DOM的用途</strong></p>
+<ul>
+<li>动态更新内容</li>
+<li>实现交互式页面</li>
+<li>数据驱动的动态加载</li>
+<li>动态样式与动画</li>
+</ul>
+<p><strong>4.DOM的局限性</strong></p>
+<ol>
+<li>性能问题：<ul>
+<li>DOM操作的频繁修改可能导致性能下降（如页面的重排与重绘）</li>
+<li>解决办法：使用虚拟DOM（如React、Vue的实现）</li>
+</ul>
+</li>
+<li>复杂性：<ul>
+<li>直接操作DOM树时，代码复杂且难以维护</li>
+<li>使用前端框架（Vue、React）可以简化DOM操作</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h4 id="一些常用的循环操作"><a href="#一些常用的循环操作" class="headerlink" title="一些常用的循环操作"></a>一些常用的循环操作</h4><h5 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h5><h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><hr>
+<h3 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h3><h4 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h4><p><code>异步请求</code>是指在程序运行过程中，发送请求的代码不会阻塞后续的代码执行，而是会在请求完成后通过回调函数、Promise或事件来处理结果。这种机制让程序可以一边发送请求一边做其他事情，从而提高运行效率和用户体验。</p>
+<h5 id="异步请求核心概念"><a href="#异步请求核心概念" class="headerlink" title="异步请求核心概念"></a>异步请求核心概念</h5><h6 id="1-回调函数（Callback"><a href="#1-回调函数（Callback" class="headerlink" title="1.回调函数（Callback)"></a>1.回调函数（Callback)</h6><p>当异步操作完成后，通过回调函数来处理结果。</p>
+<h6 id="2-Promise"><a href="#2-Promise" class="headerlink" title="2.Promise"></a>2.Promise</h6><p><code>Promise</code>是一种更优雅的方式来处理异步操作，解决了回调函数嵌套过深（回调地狱）的问题</p>
+<h6 id="3-async-await"><a href="#3-async-await" class="headerlink" title="3.async&#x2F;await"></a>3.async&#x2F;await</h6><p><code>async/await</code>是基于Promise的语法糖，能让异步代码看起来像同步代码</p>
+<hr>
 
                 
               </div>
